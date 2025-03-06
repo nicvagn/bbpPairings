@@ -65,6 +65,7 @@ optional_cxxflags = \
 	-Wunused-macros \
 	-Wvla \
 	-Wzero-as-null-pointer-constant \
+	-Wno-free-nonheap-object \
 	-Wno-overflow \
 	-Wno-sign-compare
 # Omitted because they were being triggered:
@@ -433,7 +434,7 @@ clean: clean-tests
 
 $(OBJ)/%.o: $(SRC)/%.cpp
 	mkdir -p $(dir $@)
-	$(CXX) -o $@ $^ -c -I$(SRC) -MMD -MP $(CXXFLAGS)
+	$(CXX) -o $@ $< -c -I$(SRC) -MMD -MP $(CXXFLAGS)
 
 $(OBJ)/bbpPairings.exe: $(OBJECTS)
 	$(CXX) -o $@ $(OBJECTS) $(LDFLAGS)
