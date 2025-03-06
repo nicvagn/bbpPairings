@@ -33,8 +33,6 @@ COMP = emm
 optional_cxxflags = \
 	-std=c++20 \
 	-ftabstop=2 \
-	-Werror \
-	-Wfatal-errors \
 	-pedantic \
 	-pedantic-errors \
 	-Wall \
@@ -68,6 +66,9 @@ optional_cxxflags = \
 	-Wno-free-nonheap-object \
 	-Wno-overflow \
 	-Wno-sign-compare
+# nrv rmfed because:'codecvt_utf8<char32_t>' is deprecated
+# -Werror \
+# -Wfatal-errors \ 'codecvt_utf8<char32_t>' is deprecated [-Wdeprecated-declarations]
 # Omitted because they were being triggered:
 # -Waggregate-return
 # -Wconversion
