@@ -28,7 +28,7 @@ debug = no
 profile = no
 optimize = yes
 static = no
-COMP = gcc
+COMP = emm
 
 optional_cxxflags = \
 	-std=c++20 \
