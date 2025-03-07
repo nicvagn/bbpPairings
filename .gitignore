@@ -4,3 +4,4 @@
 bbpPairings*
 test/test-includes.h
 test/tests/*.output
+scratch
