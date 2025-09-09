@@ -7,9 +7,9 @@
 #include <stdexcept>
 #include <string>
 
-#include <swisssystems/common.h>
-#include <utility/random.h>
-#include <utility/uinttypes.h>
+#include "swisssystems/common.h"
+#include "utility/random.h"
+#include "utility/uinttypes.h"
 
 #include "tournament.h"
 

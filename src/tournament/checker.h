@@ -4,7 +4,7 @@
 #include <ostream>
 #include <string>
 
-#include <swisssystems/common.h>
+#include "swisssystems/common.h"
 
 #include "tournament.h"
 

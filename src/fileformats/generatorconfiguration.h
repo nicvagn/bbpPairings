@@ -3,7 +3,7 @@
 
 #include <istream>
 
-#include <tournament/generator.h>
+#include "tournament/generator.h"
 
 #ifndef OMIT_GENERATOR
 namespace fileformats

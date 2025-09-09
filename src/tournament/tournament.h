@@ -10,9 +10,9 @@
 #include <utility>
 #include <vector>
 
-#include <utility/typesizes.h>
-#include <utility/uintstringconversion.h>
-#include <utility/uinttypes.h>
+#include "utility/typesizes.h"
+#include "utility/uintstringconversion.h"
+#include "utility/uinttypes.h"
 
 #ifdef MAX_PLAYERS
 #define TOURNAMENT_MAX_PLAYERS MAX_PLAYERS

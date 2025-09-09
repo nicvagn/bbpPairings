@@ -1,6 +1,6 @@
 #include <deque>
 
-#include <utility/uintstringconversion.h>
+#include "utility/uintstringconversion.h"
 
 #include "tournament.h"
 

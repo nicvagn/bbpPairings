@@ -4,8 +4,8 @@
 #include <ostream>
 #include <string>
 
-#include <swisssystems/common.h>
-#include <utility/uintstringconversion.h>
+#include "swisssystems/common.h"
+#include "utility/uintstringconversion.h"
 
 #include "checker.h"
 #include "tournament.h"

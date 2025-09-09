@@ -9,12 +9,12 @@
 #include <utility>
 #include <vector>
 
-#include <swisssystems/common.h>
-#include <utility/random.h>
-#include <utility/typesizes.h>
-#include <utility/uintfloatconversion.h>
-#include <utility/uintstringconversion.h>
-#include <utility/uinttypes.h>
+#include "swisssystems/common.h"
+#include "utility/random.h"
+#include "utility/typesizes.h"
+#include "utility/uintfloatconversion.h"
+#include "utility/uintstringconversion.h"
+#include "utility/uinttypes.h"
 
 #include "generator.h"
 #include "tournament.h"
