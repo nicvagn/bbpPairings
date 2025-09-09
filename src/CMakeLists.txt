@@ -1,41 +1,72 @@
+# src/CMakeLists.txt
 
-# Define source files for each component
-set(FILEFORMATS_SOURCES
+# File formats library
+add_library(fileformats
     fileformats/generatorconfiguration.cpp
+    fileformats/generatorconfiguration.h
     fileformats/trf.cpp
+    fileformats/trf.h
+    fileformats/types.h
 )
+target_include_directories(fileformats PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set_target_properties(fileformats PROPERTIES CXX_STANDARD 17)
 
-set(MATCHING_SOURCES
+# Matching library
+add_library(matching
     matching/computer.cpp
+    matching/computer.h
+    matching/templateinstantiation.h
     matching/detail/graph.cpp
+    matching/detail/graphimpl.h
+    matching/detail/graphsig.h
+    matching/detail/blossomimpl.h
+    matching/detail/blossomsig.h
     matching/detail/parentblossom.cpp
+    matching/detail/parentblossomimpl.h
+    matching/detail/parentblossomsig.h
     matching/detail/rootblossom.cpp
+    matching/detail/rootblossomimpl.h
+    matching/detail/rootblossomsig.h
+    matching/detail/types.h
+    matching/detail/verteximpl.h
+    matching/detail/vertexsig.h
 )
+target_include_directories(matching PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set_target_properties(matching PROPERTIES CXX_STANDARD 17)
 
-set(SWISSSYSTEMS_SOURCES
+# Swiss systems library
+add_library(swisssystems
     swisssystems/burstein.cpp
+    swisssystems/burstein.h
     swisssystems/common.cpp
+    swisssystems/common.h
     swisssystems/dutch.cpp
+    swisssystems/dutch.h
 )
+target_include_directories(swisssystems PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set_target_properties(swisssystems PROPERTIES CXX_STANDARD 17)
+target_link_libraries(swisssystems matching tournament)
 
-set(TOURNAMENT_SOURCES
+# Tournament library
+add_library(tournament
     tournament/checker.cpp
+    tournament/checker.h
     tournament/generator.cpp
+    tournament/generator.h
     tournament/tournament.cpp
+    tournament/tournament.h
 )
-
-# Create libraries
-add_library(fileformats STATIC ${FILEFORMATS_SOURCES})
-add_library(matching STATIC ${MATCHING_SOURCES})
-add_library(swisssystems STATIC ${SWISSSYSTEMS_SOURCES})
-add_library(tournament STATIC ${TOURNAMENT_SOURCES})
-
-# Set include directories
-foreach(lib fileformats matching swisssystems tournament)
-    target_include_directories(${lib} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-endforeach()
+target_include_directories(tournament PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set_target_properties(tournament PROPERTIES CXX_STANDARD 17)
+target_link_libraries(tournament matching)
 
 # Main executable
-add_executable(main main.cpp)
-target_link_libraries(main PRIVATE fileformats matching swisssystems tournament)
-target_include_directories(main PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(main
+    main.cpp
+)
+target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set_target_properties(main PROPERTIES CXX_STANDARD 17)
+target_link_libraries(main fileformats swisssystems tournament matching)
+
+# Set the output name for the executable
+set_target_properties(main PROPERTIES OUTPUT_NAME "bbpPairings")
