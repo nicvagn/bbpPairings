@@ -13,9 +13,9 @@
 #include <utility>
 #include <vector>
 
-#include <tournament/tournament.h>
-#include <utility/tokenizer.h>
-#include <utility/uintstringconversion.h>
+#include "tournament/tournament.h"
+#include "utility/tokenizer.h"
+#include "utility/uintstringconversion.h"
 
 #include "trf.h"
 #include "types.h"

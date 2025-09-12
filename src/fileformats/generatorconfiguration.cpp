@@ -3,9 +3,9 @@
 #include <stdexcept>
 #include <string>
 
-#include <tournament/generator.h>
-#include <tournament/tournament.h>
-#include <utility/uintstringconversion.h>
+#include "tournament/generator.h"
+#include "tournament/tournament.h"
+#include "utility/uintstringconversion.h"
 
 #include "generatorconfiguration.h"
 #include "types.h"
